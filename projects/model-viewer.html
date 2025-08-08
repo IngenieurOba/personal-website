@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Model Viewer</title><link rel="stylesheet" href="../styles/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head><body><header class="site"><nav class="wrap"><div class="brand"><a href="../index.html">Toba Kudehinbu</a></div>
+<div class="nav-links"><a href="../projects/index.html">Projects</a><a href="../posts/index.html">Writing</a><a href="../cv/index.html">CVs</a></div></nav></header>
+<main class="wrap"><h1 id="title">Model</h1><p class="note">Renders Excel/CSV in your browser.</p><div id="sheets"></div></main>
+<footer class="wrap">© <span id="y"></span> Toba Kudehinbu</footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const qp=new URLSearchParams(location.search);const file=qp.get('file');const t=qp.get('title');if(t)document.getElementById('title').textContent=decodeURIComponent(t);
+if(!file){document.getElementById('sheets').innerHTML='<p>Provide ?file=../models/your.xlsx</p>'}
+else{fetch(file).then(r=>r.arrayBuffer()).then(b=>{const wb=XLSX.read(b,{type:'array'});wb.SheetNames.forEach(n=>{const html=XLSX.utils.sheet_to_html(wb.Sheets[n],{header:`<h2>${n}</h2>`});const c=document.createElement('div');c.className='card';c.innerHTML=html;document.getElementById('sheets').appendChild(c);});}).catch(e=>{document.getElementById('sheets').innerHTML='<p>Failed to load file.</p>';console.error(e);});}
+</script></body></html>
