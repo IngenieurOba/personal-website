@@ -1,14 +1,127 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Toba Kudehinbu — Personal Site</title>
-<link rel="stylesheet" href="styles/styles.css"><script defer src="scripts/main.js"></script>
-</head><body>
-<header class="site"><nav class="wrap"><div class="brand">Toba Kudehinbu</div>
-<div class="nav-links"><a href="index.html">Home</a><a href="projects/index.html">Projects</a><a href="posts/index.html">Writing</a><a href="cv/index.html">CVs</a></div></nav></header>
-<main class="wrap"><section class="hero"><h1>Designer of financial systems & models</h1>
-<p>I build and explain financial models, and write about markets.</p><p class="note">Pure HTML/CSS/JS. Host anywhere.</p></section>
-<section class="grid"><div class="card"><h3>Projects</h3><p>Interactive model viewers.</p><a href="projects/index.html">See projects →</a></div>
-<div class="card"><h3>Writing</h3><p>Market notes & model explainers.</p><a href="posts/index.html">Read posts →</a></div>
-<div class="card"><h3>Targeted CVs</h3><p>Print-ready tailored pages.</p><a href="cv/index.html">Make CVs →</a></div></section></main>
-<footer class="wrap">© <span id="y"></span> Toba Kudehinbu</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toba Kudehinbu - Financial Modeling Expert</title>
+    <meta name="description" content="Financial modeling expert specializing in DCF, LBO, and M&A models. Professional portfolio and CV.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family:Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="#home">Toba Kudehinbu</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="projects/">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="assets/images/profile.jpg" alt="Your Name" class="profile-img">
+                    </div>
+                    <div class="hero-text">
+                        <h1 class="hero-title">Toba Kudehinbu</h1>
+                        <p class="hero-subtitle">A dedicated financial modeling expert with a passion for creating robust, insightful valuation models.</p>
+                        <p class="hero-description">
+                            I build comprehensive financial models, analyze complex transactions, and provide strategic insights through quantitative analysis. 
+                            Currently working in Banking where I specialize in DCF models, LBO analyses, and M&A valuations used by teams managing $30m+ in assets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-grid">
+                        <div class="about-item">
+                            <div class="about-number">7+</div>
+                            <div class="about-label">Years of financial modeling</div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-number">50+</div>
+                            <div class="about-label">Models built and deployed</div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-number">$10B+</div>
+                            <div class="about-label">Transaction value analyzed</div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-number">15+</div>
+                            <div class="about-label">Industries covered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <div class="container">
+                <h2 class="section-title">What I Bring</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Financial Modeling Expertise</h3>
+                        <p>Advanced Excel and Python skills for building DCF, LBO, merger, and trading models with robust scenario analysis.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Analytical Rigor</h3>
+                        <p>Deep understanding of corporate finance principles, valuation methodologies, and market dynamics across industries.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Strategic Insight</h3>
+                        <p>Ability to translate complex financial data into clear, actionable recommendations for investment decisions.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Technical Proficiency</h3>
+                        <p>Excel VBA, Python, SQL, and data visualization tools. Built this website with HTML, CSS, and JavaScript too.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Explore My Work</h2>
+                    <p>View detailed financial models, methodologies, and insights from real-world projects.</p>
+                    <a href="projects/" class="btn btn-primary">View Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Interested in collaborating or discussing opportunities?</p>
+                    <div class="contact-links">
+                        <a href="mailto:toba.kudehinbu@example.com" class="contact-link">toba.kudehinbu@example.com</a>
+                        <a href="https://linkedin.com/in/yourprofile" class="contact-link">LinkedIn</a>
+                        <a href="tel:+1234567890" class="contact-link">+1 (234) 567-890</a>
+                    </div>
+                </div>
+                <div class="footer-note">
+                    <p>&copy; 2024 Toba Kudehinbu. Built with curiosity.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
