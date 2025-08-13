@@ -184,4 +184,35 @@ function initMobileMenu() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
     
-    if
+    if (!mobileMenuBtn || !mobileMenu) return;
+    
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        });
+    });
+}
+
+// Initialize everything when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initSmoothScrolling();
+    initNavigationHighlight();
+    initScrollAnimations();
+    initMobileMenu();
+    handleContactForm();
+});
+
+// Export functions for use in other files
+window.siteUtils = {
+    loadContent,
+    formatNumber,
+    showMessage
+};
