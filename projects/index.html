@@ -1,11 +1,271 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Projects — Toba Kudehinbu</title><link rel="stylesheet" href="../styles/styles.css">
-</head><body><header class="site"><nav class="wrap"><div class="brand"><a href="../index.html">Toba Kudehinbu</a></div>
-<div class="nav-links"><a href="../projects/index.html">Projects</a><a href="../posts/index.html">Writing</a><a href="../cv/index.html">CVs</a></div></nav></header>
-<main class="wrap"><h1>Projects</h1><div class="grid">
-<article class="card"><div class="badge">Demo</div><h3>Carry Trade Model (sample)</h3>
-<p>Renders a CSV/Excel file in-browser.</p>
-<a href="model-viewer.html?file=../models/demo.csv&title=Carry%20Trade%20Model">Open viewer →</a></article>
-</div></main><footer class="wrap">© <span id="y"></span> Toba Kudehinbu</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Toba Kudehinbu</title>
+    <meta name="description" content="Financial modeling projects including DCF, LBO, and M&A valuation models with detailed analysis.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family:Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="../">Toba Kudehinbu</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../#about">About</a></li>
+                <li><a href="./" class="active">Projects</a></li>
+                <li><a href="../#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Financial Modeling Projects</h1>
+                <p class="page-subtitle">Comprehensive models with detailed analysis and insights from real-world applications</p>
+            </div>
+        </section>
+
+        <section class="projects-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Models</button>
+                    <button class="filter-btn" data-filter="dcf">DCF Models</button>
+                    <button class="filter-btn" data-filter="lbo">LBO Analysis</button>
+                    <button class="filter-btn" data-filter="merger">M&A Models</button>
+                    <button class="filter-btn" data-filter="trading">Trading Models</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-grid">
+            <div class="container">
+                <div class="projects-container">
+                    
+                    <!-- Project 1: DCF Model -->
+                    <div class="project-card" data-category="dcf">
+                        <div class="project-image">
+                            <img src="models/dcf-tech-preview.png" alt="DCF Technology Company Model" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary" onclick="openModel('dcf-tech-company')">View Model</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-category">DCF Analysis</span>
+                                <span class="project-date">Dec 2024</span>
+                            </div>
+                            <h3 class="project-title">Technology Company Valuation</h3>
+                            <p class="project-description">
+                                Comprehensive DCF model for a mid-cap SaaS company with detailed revenue forecasting, 
+                                margin analysis, and sensitivity testing across multiple scenarios.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-value">$2.3B</span>
+                                    <span class="stat-label">Enterprise Value</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">23.4%</span>
+                                    <span class="stat-label">IRR</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">3.2x</span>
+                                    <span class="stat-label">Multiple</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: LBO Model -->
+                    <div class="project-card" data-category="lbo">
+                        <div class="project-image">
+                            <img src="models/lbo-retail-preview.png" alt="LBO Retail Chain Model" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary" onclick="openModel('lbo-retail-chain')">View Model</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-category">LBO Analysis</span>
+                                <span class="project-date">Nov 2024</span>
+                            </div>
+                            <h3 class="project-title">Retail Chain Buyout Analysis</h3>
+                            <p class="project-description">
+                                Full LBO model including debt capacity analysis, management projections review, 
+                                and exit scenario modeling for a regional retail chain acquisition.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-value">$850M</span>
+                                    <span class="stat-label">Purchase Price</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">28.7%</span>
+                                    <span class="stat-label">Equity IRR</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">4.1x</span>
+                                    <span class="stat-label">Equity Multiple</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Merger Model -->
+                    <div class="project-card" data-category="merger">
+                        <div class="project-image">
+                            <img src="models/merger-analysis-preview.png" alt="Healthcare Merger Model" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary" onclick="openModel('healthcare-merger')">View Model</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-category">M&A Analysis</span>
+                                <span class="project-date">Oct 2024</span>
+                            </div>
+                            <h3 class="project-title">Healthcare Services Merger</h3>
+                            <p class="project-description">
+                                Accretion/dilution analysis for a strategic merger between two healthcare service 
+                                providers, including synergy modeling and pro forma analysis.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-value">$1.8B</span>
+                                    <span class="stat-label">Deal Value</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">12%</span>
+                                    <span class="stat-label">EPS Accretion</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">$180M</span>
+                                    <span class="stat-label">Synergies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Trading Model -->
+                    <div class="project-card" data-category="trading">
+                        <div class="project-image">
+                            <img src="models/commodity-trading-preview.png" alt="Commodity Trading Model" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="btn btn-primary" onclick="openModel('commodity-trading')">View Model</button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-category">Trading Model</span>
+                                <span class="project-date">Sep 2024</span>
+                            </div>
+                            <h3 class="project-title">Commodity Trading Strategy</h3>
+                            <p class="project-description">
+                                Quantitative model for oil futures trading strategy with risk management framework, 
+                                backtesting results, and portfolio optimization components.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-value">34%</span>
+                                    <span class="stat-label">Annual Return</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">1.8</span>
+                                    <span class="stat-label">Sharpe Ratio</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">-12%</span>
+                                    <span class="stat-label">Max Drawdown</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Interested in a Custom Model?</h2>
+                    <p>I create bespoke financial models tailored to your specific analysis needs</p>
+                    <a href="../#contact" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Model Viewer Modal -->
+    <div id="modelModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Financial Model</h2>
+                <span class="modal-close" onclick="closeModel()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="model-info">
+                    <div class="model-tabs">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="model">Interactive Model</button>
+                        <button class="tab-btn" data-tab="analysis">Analysis</button>
+                        <button class="tab-btn" data-tab="methodology">Methodology</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="overview" class="tab-pane active">
+                            <div id="modelOverview">
+                                <!-- Model overview content will be loaded here -->
+                            </div>
+                        </div>
+                        <div id="model" class="tab-pane">
+                            <div id="spreadsheetContainer">
+                                <!-- Interactive spreadsheet will be loaded here -->
+                            </div>
+                        </div>
+                        <div id="analysis" class="tab-pane">
+                            <div id="modelAnalysis">
+                                <!-- Analysis content will be loaded here -->
+                            </div>
+                        </div>
+                        <div id="methodology" class="tab-pane">
+                            <div id="modelMethodology">
+                                <!-- Methodology content will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Interested in collaborating or discussing opportunities?</p>
+                    <div class="contact-links">
+                        <a href="mailto:toba.kudehinbu@example.com" class="contact-link">toba.kudehinbu@example.com</a>
+                        <a href="https://linkedin.com/in/tobekud" class="contact-link">LinkedIn</a>
+                        <a href="tel:+1234567890" class="contact-link">+1 (234) 567-890</a>
+                    </div>
+                </div>
+                <div class="footer-note">
+                    <p>&copy; 2024 Toba Kudehinbu. Built with curiosity.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>
