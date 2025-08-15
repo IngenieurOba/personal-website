@@ -1,8 +1,306 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CVs — Toba Kudehinbu</title><link rel="stylesheet" href="../styles/styles.css">
-</head><body><header class="site"><nav class="wrap"><div class="brand"><a href="../index.html">Toba Kudehinbu</a></div>
-<div class="nav-links"><a href="../projects/index.html">Projects</a><a href="../posts/index.html">Writing</a><a href="../cv/index.html">CVs</a></div></nav></header>
-<main class="wrap"><h1>Targeted CVs</h1><ul><li><a href="template.html">Template</a></li><li><a href="sample-37signals.html">Sample: 37signals</a></li></ul></main>
-<footer class="wrap">© <span id="y"></span> Toba Kudehinbu</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Toba Kudehinbu - Financial Analyst</title>
+    <meta name="description" content="Experienced financial modeling professional seeking opportunities in investment banking and private equity.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="cv.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family:Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="cv-body">
+    <!-- Print/Export Controls -->
+    <div class="cv-controls no-print">
+        <div class="container">
+            <div class="controls-content">
+                <div class="cv-info">
+                    <span class="cv-title">CV for: <span id="positionTitle">Financial Analyst</span></span>
+                    <span class="cv-company">Company: <span id="companyName">Investment Bank</span></span>
+                </div>
+                <div class="controls-actions">
+                    <button onclick="window.print()" class="btn btn-primary">
+                        <span>📄</span> Download PDF
+                    </button>
+                    <button onclick="shareCV()" class="btn btn-secondary">
+                        <span>🔗</span> Share Link
+                    </button>
+                    <a href="../" class="btn btn-outline">← Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Content -->
+    <main class="cv-main">
+        <div class="cv-container">
+            
+            <!-- Header Section -->
+            <header class="cv-header">
+                <div class="cv-personal">
+                    <div class="cv-photo">
+                        <img src="../assets/images/profile.jpg" alt="Toba Kudehinbu" class="profile-image">
+                    </div>
+                    <div class="cv-details">
+                        <h1 class="cv-name">Toba Kudehinbu</h1>
+                        <h2 class="cv-position" id="cvPosition">Senior Financial Analyst</h2>
+                        <div class="cv-contact">
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <span>toba.kudehinbu@example.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📱</span>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">🔗</span>
+                                <span>linkedin.com/in/tobekud</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">🌐</span>
+                                <span>tobekud.github.io</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Professional Summary -->
+            <section class="cv-section">
+                <h3 class="section-title">Professional Summary</h3>
+                <div class="section-content">
+                    <p id="professionalSummary">
+                        Experienced financial analyst with 7+ years in investment banking and corporate finance. 
+                        Specialized in building comprehensive financial models, conducting valuation analyses, and 
+                        supporting M&A transactions exceeding $10B in aggregate value. Proven track record of 
+                        delivering actionable insights through quantitative analysis and strategic financial planning.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="cv-section">
+                <h3 class="section-title">Professional Experience</h3>
+                <div class="section-content" id="experienceContent">
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-main">
+                                <h4 class="position-title">Senior Financial Analyst</h4>
+                                <h5 class="company-name">Global Investment Bank</h5>
+                            </div>
+                            <div class="experience-dates">
+                                <span class="date-range">2022 - Present</span>
+                                <span class="location">New York, NY</span>
+                            </div>
+                        </div>
+                        <ul class="experience-achievements">
+                            <li>Built comprehensive DCF, LBO, and merger models for transactions totaling $5.2B in enterprise value</li>
+                            <li>Led financial due diligence for 12 M&A deals, identifying $180M in synergy opportunities</li>
+                            <li>Developed automated valuation templates reducing model build time by 40%</li>
+                            <li>Presented investment recommendations to C-suite executives and board members</li>
+                            <li>Mentored junior analysts on financial modeling best practices and technical skills</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-main">
+                                <h4 class="position-title">Financial Analyst</h4>
+                                <h5 class="company-name">Corporate Development Team</h5>
+                            </div>
+                            <div class="experience-dates">
+                                <span class="date-range">2020 - 2022</span>
+                                <span class="location">London, UK</span>
+                            </div>
+                        </div>
+                        <ul class="experience-achievements">
+                            <li>Supported strategic initiatives including market entry analysis and capital allocation decisions</li>
+                            <li>Created financial models for new product launches with projected ROI exceeding 25%</li>
+                            <li>Conducted industry analysis and competitive benchmarking across 15+ sectors</li>
+                            <li>Collaborated with cross-functional teams to develop business cases for $500M+ investments</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-main">
+                                <h4 class="position-title">Junior Financial Analyst</h4>
+                                <h5 class="company-name">Investment Advisory Firm</h5>
+                            </div>
+                            <div class="experience-dates">
+                                <span class="date-range">2018 - 2020</span>
+                                <span class="location">Lagos, Nigeria</span>
+                            </div>
+                        </div>
+                        <ul class="experience-achievements">
+                            <li>Performed fundamental analysis and equity research for emerging market opportunities</li>
+                            <li>Built sector-specific valuation models for telecommunications and banking industries</li>
+                            <li>Prepared investment memos and pitch materials for institutional clients</li>
+                            <li>Achieved 87% accuracy rate in earnings forecasts across coverage universe</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="cv-section">
+                <h3 class="section-title">Education</h3>
+                <div class="section-content" id="educationContent">
+                    
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div class="education-main">
+                                <h4 class="degree-title">Master of Science in Finance</h4>
+                                <h5 class="institution-name">London Business School</h5>
+                            </div>
+                            <div class="education-dates">
+                                <span class="graduation-year">2018</span>
+                                <span class="gpa">Distinction</span>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <p>Relevant Coursework: Advanced Corporate Finance, Financial Modeling, Investment Analysis, Derivatives</p>
+                            <p>Thesis: "Valuation Methods in Emerging Market M&A Transactions"</p>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div class="education-main">
+                                <h4 class="degree-title">Bachelor of Science in Economics</h4>
+                                <h5 class="institution-name">University of Lagos</h5>
+                            </div>
+                            <div class="education-dates">
+                                <span class="graduation-year">2016</span>
+                                <span class="gpa">First Class Honours</span>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <p>Concentration: Financial Economics and Econometrics</p>
+                            <p>Awards: Dean's List (4 semesters), Outstanding Graduate in Economics</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="cv-section">
+                <h3 class="section-title">Technical Skills</h3>
+                <div class="section-content">
+                    <div class="skills-grid" id="skillsGrid">
+                        
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">Financial Modeling</h4>
+                            <ul class="skill-list">
+                                <li>Advanced Excel (VBA, Power Query)</li>
+                                <li>DCF, LBO, M&A Models</li>
+                                <li>Monte Carlo Simulations</li>
+                                <li>Sensitivity Analysis</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">Programming & Data</h4>
+                            <ul class="skill-list">
+                                <li>Python (Pandas, NumPy)</li>
+                                <li>SQL (Advanced Queries)</li>
+                                <li>R (Statistical Analysis)</li>
+                                <li>Bloomberg Terminal</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">Visualization</h4>
+                            <ul class="skill-list">
+                                <li>PowerBI & Tableau</li>
+                                <li>Advanced PowerPoint</li>
+                                <li>Financial Dashboards</li>
+                                <li>Data Storytelling</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">Certifications</h4>
+                            <ul class="skill-list">
+                                <li>CFA Level II Candidate</li>
+                                <li>Financial Risk Manager (FRM)</li>
+                                <li>Bloomberg Market Concepts</li>
+                                <li>Advanced Excel Certification</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notable Projects Section -->
+            <section class="cv-section">
+                <h3 class="section-title">Notable Projects</h3>
+                <div class="section-content" id="projectsContent">
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h4 class="project-title">Healthcare Services Merger Analysis</h4>
+                            <span class="project-date">2024</span>
+                        </div>
+                        <div class="project-description">
+                            <p>Led comprehensive financial analysis for $1.8B strategic merger, including accretion/dilution modeling, 
+                            synergy quantification, and regulatory impact assessment. Identified $180M in annual cost synergies.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h4 class="project-title">Technology Company LBO Model</h4>
+                            <span class="project-date">2023</span>
+                        </div>
+                        <div class="project-description">
+                            <p>Built detailed LBO model for $850M private equity transaction, incorporating management projections, 
+                            debt capacity analysis, and multiple exit scenarios. Achieved 28.7% projected equity IRR.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h4 class="project-title">Emerging Markets Investment Framework</h4>
+                            <span class="project-date">2022</span>
+                        </div>
+                        <div class="project-description">
+                            <p>Developed proprietary valuation framework for emerging market investments, incorporating country risk, 
+                            currency volatility, and regulatory factors. Framework adopted across 12+ investment decisions.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- References Section -->
+            <section class="cv-section no-print-break">
+                <h3 class="section-title">References</h3>
+                <div class="section-content">
+                    <p class="references-note">Professional references available upon request</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer for digital version -->
+    <footer class="cv-footer no-print">
+        <div class="cv-container">
+            <div class="footer-content">
+                <p>This CV was generated specifically for this opportunity. For my complete portfolio and financial modeling examples, visit <a href="../">tobekud.github.io</a></p>
+                <p class="generated-info">Generated on: <span id="generatedDate"></span> | Valid until: <span id="validUntil"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cv.js"></script>
+</body>
+</html>
