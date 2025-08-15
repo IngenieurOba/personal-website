@@ -3,125 +3,895 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toba Kudehinbu - Financial Modeling Expert</title>
-    <meta name="description" content="Financial modeling expert specializing in DCF, LBO, and M&A models. Professional portfolio and CV.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family:Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Toba Kudehinbu | Financial Modeling Expert</title>
+    <meta name="description" content="Financial modeling expert specializing in DCF, LBO, and M&A valuations. Building robust valuation models for $30M+ assets.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a192f;
+            --secondary: #112240;
+            --accent: #64ffda;
+            --gold: #ffd700;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --text-light: #a8b2d1;
+            --bg-gradient: linear-gradient(135deg, #0a192f 0%, #112240 50%, #0a192f 100%);
+            --card-bg: rgba(17, 34, 64, 0.8);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 5%;
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5%;
+            position: relative;
+            background: var(--bg-gradient);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(100, 255, 218, 0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero-intro {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .hero-name {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease 0.2s forwards;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease 0.4s forwards;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease 0.6s forwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease 0.8s forwards;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border: 2px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Floating Elements */
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--accent);
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(30px) rotate(240deg); }
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 5rem 5%;
+            background: var(--secondary);
+            position: relative;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .stat-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 5rem 5%;
+            background: var(--primary);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--text-primary);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .skills-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .skill-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .skill-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 5%;
+            background: var(--secondary);
+        }
+
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(100, 255, 218, 0.15);
+        }
+
+        .project-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(100, 255, 218, 0.05) 100%);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .project-subtitle {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(100, 255, 218, 0.05);
+            border-radius: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: var(--primary);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 5%;
+            background: var(--secondary);
+            text-align: center;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .hero-name {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-bar {
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .loader-progress {
+            height: 100%;
+            background: var(--accent);
+            animation: loading 1.5s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-logo">
-                <a href="#home">Toba Kudehinbu</a>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
             </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">TK</a>
             <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="projects/">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main class="main">
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-image">
-                        <img src="assets/images/profile.jpg" alt="Your Name" class="profile-img">
-                    </div>
-                    <div class="hero-text">
-                        <h1 class="hero-title">Toba Kudehinbu</h1>
-                        <p class="hero-subtitle">A dedicated financial modeling expert with a passion for creating robust, insightful valuation models.</p>
-                        <p class="hero-description">
-                            I build comprehensive financial models, analyze complex transactions, and provide strategic insights through quantitative analysis. 
-                            Currently working in Banking where I specialize in DCF models, LBO analyses, and M&A valuations used by teams managing $30m+ in assets.
-                        </p>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-icons">
+            <div class="floating-icon" style="top: 20%; left: 10%; animation-delay: 0s;">📊</div>
+            <div class="floating-icon" style="top: 60%; left: 80%; animation-delay: 5s;">💹</div>
+            <div class="floating-icon" style="top: 40%; left: 60%; animation-delay: 10s;">📈</div>
+            <div class="floating-icon" style="top: 80%; left: 30%; animation-delay: 15s;">💼</div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-intro">Hi, my name is</p>
+            <h1 class="hero-name">Toba Kudehinbu</h1>
+            <h2 class="hero-title">I build financial models that drive decisions.</h2>
+            <p class="hero-description">
+                I'm a financial modeling expert specializing in DCF, LBO, and M&A valuations. 
+                Currently, I'm focused on creating robust analytical frameworks for teams managing 
+                $30M+ in assets, translating complex financial data into strategic insights.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="about">
+        <div class="stats-container">
+            <div class="stat-card fade-in">
+                <div class="stat-number" data-target="30">0</div>
+                <div class="stat-label">Million in Assets Analyzed</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Financial Models Built</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Industries Covered</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">Client Satisfaction %</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="section-title fade-in">Core Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-card fade-in">
+                <div class="skill-icon">📊</div>
+                <h3 class="skill-title">Financial Modeling</h3>
+                <p class="skill-description">
+                    Expert-level proficiency in building complex financial models including DCF, 
+                    LBO, merger models, and comparable company analysis.
+                </p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Excel VBA</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Monte Carlo</span>
                 </div>
             </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-grid">
-                        <div class="about-item">
-                            <div class="about-number">7+</div>
-                            <div class="about-label">Years of financial modeling</div>
-                        </div>
-                        <div class="about-item">
-                            <div class="about-number">50+</div>
-                            <div class="about-label">Models built and deployed</div>
-                        </div>
-                        <div class="about-item">
-                            <div class="about-number">$10B+</div>
-                            <div class="about-label">Transaction value analyzed</div>
-                        </div>
-                        <div class="about-item">
-                            <div class="about-number">15+</div>
-                            <div class="about-label">Industries covered</div>
-                        </div>
-                    </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">📈</div>
+                <h3 class="skill-title">Valuation Analysis</h3>
+                <p class="skill-description">
+                    Deep expertise in various valuation methodologies, market analysis, 
+                    and investment thesis development across multiple sectors.
+                </p>
+                <div class="skill-tags">
+                    <span class="skill-tag">DCF</span>
+                    <span class="skill-tag">Multiples</span>
+                    <span class="skill-tag">Options</span>
                 </div>
             </div>
-        </section>
-
-        <section class="skills">
-            <div class="container">
-                <h2 class="section-title">What I Bring</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <h3>Financial Modeling Expertise</h3>
-                        <p>Advanced Excel and Python skills for building DCF, LBO, merger, and trading models with robust scenario analysis.</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Analytical Rigor</h3>
-                        <p>Deep understanding of corporate finance principles, valuation methodologies, and market dynamics across industries.</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Strategic Insight</h3>
-                        <p>Ability to translate complex financial data into clear, actionable recommendations for investment decisions.</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Technical Proficiency</h3>
-                        <p>Excel VBA, Python, SQL, and data visualization tools. Built this website with HTML, CSS, and JavaScript too.</p>
-                    </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">💼</div>
+                <h3 class="skill-title">Strategic Advisory</h3>
+                <p class="skill-description">
+                    Translating quantitative analysis into actionable strategic recommendations 
+                    for C-suite executives and investment committees.
+                </p>
+                <div class="skill-tags">
+                    <span class="skill-tag">M&A</span>
+                    <span class="skill-tag">Due Diligence</span>
+                    <span class="skill-tag">Risk Analysis</span>
                 </div>
             </div>
-        </section>
-
-        <section class="cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Explore My Work</h2>
-                    <p>View detailed financial models, methodologies, and insights from real-world projects.</p>
-                    <a href="projects/" class="btn btn-primary">View Projects</a>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">🔧</div>
+                <h3 class="skill-title">Technical Skills</h3>
+                <p class="skill-description">
+                    Advanced programming capabilities for automation, data analysis, 
+                    and building custom financial applications.
+                </p>
+                <div class="skill-tags">
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Bloomberg</span>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>Interested in collaborating or discussing opportunities?</p>
-                    <div class="contact-links">
-                        <a href="mailto:toba.kudehinbu@example.com" class="contact-link">toba.kudehinbu@example.com</a>
-                        <a href="https://linkedin.com/in/yourprofile" class="contact-link">LinkedIn</a>
-                        <a href="tel:+1234567890" class="contact-link">+1 (234) 567-890</a>
-                    </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">📉</div>
+                <h3 class="skill-title">Risk Management</h3>
+                <p class="skill-description">
+                    Comprehensive risk assessment including market, credit, and operational 
+                    risk modeling with scenario analysis.
+                </p>
+                <div class="skill-tags">
+                    <span class="skill-tag">VaR</span>
+                    <span class="skill-tag">Stress Testing</span>
+                    <span class="skill-tag">Hedging</span>
                 </div>
-                <div class="footer-note">
-                    <p>&copy; 2024 Toba Kudehinbu. Built with curiosity.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">🎯</div>
+                <h3 class="skill-title">Data Visualization</h3>
+                <p class="skill-description">
+                    Creating compelling visual narratives that communicate complex 
+                    financial insights to diverse stakeholders.
+                </p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">D3.js</span>
+                    <span class="skill-tag">Dashboards</span>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="section-title fade-in">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">Healthcare LBO Model</h3>
+                    <p class="project-subtitle">Private Equity Analysis</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Comprehensive leveraged buyout model for a $150M healthcare services acquisition, 
+                        including detailed operational improvements and exit scenario analysis.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">28%</div>
+                            <div class="metric-label">IRR Achieved</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3.2x</div>
+                            <div class="metric-label">MOIC</div>
+                        </div>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LBO</span>
+                        <span class="skill-tag">Healthcare</span>
+                        <span class="skill-tag">Scenario Analysis</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">Tech Merger Model</h3>
+                    <p class="project-subtitle">M&A Integration Analysis</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Built comprehensive merger model for $500M SaaS acquisition, analyzing 
+                        synergies, integration costs, and accretion/dilution scenarios.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">$45M</div>
+                            <div class="metric-label">Synergies</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">18mo</div>
+                            <div class="metric-label">Payback</div>
+                        </div>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">M&A</span>
+                        <span class="skill-tag">SaaS</span>
+                        <span class="skill-tag">Integration</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3 class="project-title">Real Estate DCF</h3>
+                    <p class="project-subtitle">Commercial Property Valuation</p>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Developed sophisticated DCF model for mixed-use commercial development, 
+                        incorporating multiple revenue streams and market sensitivity analysis.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">$220M</div>
+                            <div class="metric-label">NAV</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">7.8%</div>
+                            <div class="metric-label">Cap Rate</div>
+                        </div>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Real Estate</span>
+                        <span class="skill-tag">DCF</span>
+                        <span class="skill-tag">Sensitivity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title fade-in">Let's Connect</h2>
+        <div class="contact-content fade-in">
+            <p class="contact-description">
+                I'm always interested in discussing new opportunities, challenging projects, 
+                or how financial modeling can drive better investment decisions. 
+                Whether you need a complex model built or strategic financial insights, 
+                I'd love to hear from you.
+            </p>
+            <a href="mailto:toba@example.com" class="btn btn-primary">Send Message</a>
+            <div class="contact-links">
+                <a href="#" class="contact-link" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="#" class="contact-link" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="#" class="contact-link" aria-label="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                    </svg>
+                </a>
